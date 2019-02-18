@@ -1,7 +1,6 @@
 package main
 
 import (
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -32,5 +31,6 @@ func loadDb() {
 	checkErr(err)
 
 	db.AutoMigrate(&User{})
+
 	db.Close()
 }

@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/jinzhu/gorm"
-)
+import "github.com/jinzhu/gorm"
 
 // User struct
 type User struct {
@@ -12,7 +10,7 @@ type User struct {
 	Name     string `gorm:"type:varchar(50);not null" json:"name"`
 	Username string `gorm:"type:varchar(20);not null; unique" json:"username"`
 	Email    string `gorm:"type:varchar(50);not null; unique" json:"email"`
-	Role     string `gorm:"type:varchar(10);not null; unique;default:USER" json:"role"`
+	Role     string `gorm:"type:varchar(10);not null;default:\"USER\"" json:"role"`
 }
 
 // Error struct
