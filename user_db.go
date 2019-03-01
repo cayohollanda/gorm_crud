@@ -1,36 +1,31 @@
 package main
 
 import (
-	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-func createUserRepo(newUser User) (u User, e Error) {
-	db, err := gorm.Open("mysql", "root:root@tcp(localhost:3306)/gorm_crud?charset=utf8&parseTime=True")
-	checkErr(err)
-
-	db.Create(newUser)
-
-	var ret User
-	db.First(&ret)
-
-	db.Close()
-
-	return ret, Error{}
+func createUserRepo(newUser User) {
+	getConnection().Create(&newUser)
+	getConnection().Close()
 }
 
-func getUsersListRepo() {
-	db, err := gorm.Open("mysql", "root:root@tcp(localhost:3306)/gorm_crud?charset=utf8&parseTime=True")
-	checkErr(err)
-
-	db.Close()
+func deleteUserRepo(ID int) {
+	getConnection().Where("id = ?", ID).Delete(&User{})
+	getConnection().Close()
 }
 
-func loadDb() {
-	db, err := gorm.Open("mysql", "root:root@tcp(localhost:3306)/gorm_crud?charset=utf8&parseTime=True&loc=Local")
-	checkErr(err)
+func getUsersListRepo() []User {
+	var users []User
+	getConnection().Find(&users)
+	getConnection().Close()
 
-	db.AutoMigrate(&User{})
+	return users
+}
 
-	db.Close()
+func getUserRepo(ID int) User {
+	var user User
+	getConnection().Find(&user, ID)
+	getConnection().Close()
+
+	return user
 }
