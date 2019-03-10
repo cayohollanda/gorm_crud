@@ -1,5 +1,5 @@
 # Purpose
-A repository to exercise more about a create RESTful API's with Golang, using Gorilla Mux and GORM
+A repository to exercise more about a create RESTful API's with Golang, using Gin and GORM
 
 # Pre-requisites
 - Docker (18.09)
