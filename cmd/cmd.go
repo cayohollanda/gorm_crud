@@ -18,7 +18,7 @@ func Initialize() {
 	defer config.DB.Close()
 	log.Println("[INFO] Conectado no banco de dados")
 
-	config.DB.AutoMigrate(&models.Person{})
+	config.DB.AutoMigrate(&models.Person{}, &models.User{})
 	log.Println("[INFO] AutoMigrate feito com sucesso")
 
 	r := routes.GetRoutes()
