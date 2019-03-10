@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"github.com/cayohollanda/gorm-crud/cmd/models"
-	"github.com/cayohollanda/gorm-crud/cmd/utils"
+	"github.com/cayohollanda/gorm_crud/cmd/models"
+	"github.com/cayohollanda/gorm_crud/cmd/utils"
 	"github.com/gin-gonic/gin"
 )
 

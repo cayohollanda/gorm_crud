@@ -1,8 +1,8 @@
 package models
 
 import (
-	"github.com/cayohollanda/gorm-crud/cmd/config"
-	"github.com/cayohollanda/gorm-crud/cmd/utils"
+	"github.com/cayohollanda/gorm_crud/cmd/config"
+	"github.com/cayohollanda/gorm_crud/cmd/utils"
 )
 
 func AddUser(u *User) (err error) {

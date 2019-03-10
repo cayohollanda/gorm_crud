@@ -1,7 +1,7 @@
 package models
 
 import (
-	"github.com/cayohollanda/gorm-crud/cmd/config"
+	"github.com/cayohollanda/gorm_crud/cmd/config"
 	_ "github.com/go-sql-driver/mysql"
 )
 

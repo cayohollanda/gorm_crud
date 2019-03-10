@@ -1,16 +1,16 @@
-package cmd
+package main
 
 import (
 	"log"
 
-	"github.com/cayohollanda/gorm-crud/cmd/config"
-	"github.com/cayohollanda/gorm-crud/cmd/models"
-	"github.com/cayohollanda/gorm-crud/cmd/routes"
-	"github.com/cayohollanda/gorm-crud/cmd/utils"
+	"github.com/cayohollanda/gorm_crud/cmd/config"
+	"github.com/cayohollanda/gorm_crud/cmd/models"
+	"github.com/cayohollanda/gorm_crud/cmd/routes"
+	"github.com/cayohollanda/gorm_crud/cmd/utils"
 	"github.com/jinzhu/gorm"
 )
 
-func Initialize() {
+func main() {
 	log.Println("[INFO] Iniciando aplicação")
 	var err error
 	config.DB, err = gorm.Open("mysql", "root:root@tcp(localhost:3306)/gorm_crud?charset=utf8&parseTime=True&loc=Local")

@@ -5,9 +5,9 @@ import (
 	"time"
 
 	jwt "github.com/appleboy/gin-jwt"
-	"github.com/cayohollanda/gorm-crud/cmd/controllers"
-	"github.com/cayohollanda/gorm-crud/cmd/models"
-	"github.com/cayohollanda/gorm-crud/cmd/utils"
+	"github.com/cayohollanda/gorm_crud/cmd/controllers"
+	"github.com/cayohollanda/gorm_crud/cmd/models"
+	"github.com/cayohollanda/gorm_crud/cmd/utils"
 	"github.com/gin-gonic/gin"
 )
 
