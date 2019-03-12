@@ -16,3 +16,12 @@ func CreateUser(c *gin.Context) {
 		utils.ResponseJSON(c, 200, user)
 	}
 }
+
+func ListUsers(c *gin.Context) {
+	var users []models.User
+	if err := models.FindAllUsers(&users); err != nil {
+		utils.ResponseJSON(c, 404, nil)
+	} else {
+		utils.ResponseJSON(c, 200, users)
+	}
+}

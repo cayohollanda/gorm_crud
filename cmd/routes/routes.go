@@ -71,6 +71,13 @@ func GetRoutes() *gin.Engine {
 	v1 := r.Group("/v1")
 	v1.Use(authMiddleware.MiddlewareFunc())
 
+	// Users Group
+	{
+		usersGroup := v1.Group("/users")
+
+		usersGroup.GET("/", controllers.ListUsers)
+	}
+
 	// Persons Group
 	{
 		personsGroup := v1.Group("/persons")

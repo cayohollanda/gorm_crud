@@ -5,6 +5,13 @@ import (
 	"github.com/cayohollanda/gorm_crud/cmd/utils"
 )
 
+func FindAllUsers(u *[]User) (err error) {
+	if err = config.DB.Find(u).Error; err != nil {
+		return err
+	}
+	return nil
+}
+
 func AddUser(u *User) (err error) {
 	var hash utils.Hash
 	if u.Password, err = hash.Generate(u.Password); err != nil {
