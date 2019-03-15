@@ -33,7 +33,6 @@ func initializeDB() {
 	var checkIfAdminExists models.User
 	checkIfAdminExists.Username = "admin"
 	if err := models.FindUserByUsername(&checkIfAdminExists); err != nil {
-		log.Println("[INFO] Usuário administrador não existe.")
 		createAdmin()
 	}
 }

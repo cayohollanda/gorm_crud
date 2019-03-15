@@ -4,6 +4,8 @@ import (
 	"log"
 	"time"
 
+	"github.com/gin-contrib/cors"
+
 	jwt "github.com/appleboy/gin-jwt"
 	"github.com/cayohollanda/gorm_crud/cmd/controllers"
 	"github.com/cayohollanda/gorm_crud/cmd/models"
@@ -20,6 +22,7 @@ func GetRoutes() *gin.Engine {
 	r := gin.New()
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
+	r.Use(cors.Default())
 
 	authMiddleware, err := jwt.New(&jwt.GinJWTMiddleware{
 		Realm:       "test zone",
